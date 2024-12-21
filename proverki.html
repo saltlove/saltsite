@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&amp;display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script defer type="module" src="main.js"></script>
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/threejs-components@0.0.16/build/backgrounds/grid1.cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script> document.addEventListener("DOMContentLoaded", function () { setTimeout(function () { document.getElementById("loader").style.display = "none"; document.getElementById("content").style.display = "block"; createSnowflakes(); }, 3000); }); function createSnowflakes() {
+            const snowflakeCount = 50; // Количество снежинок 
+            const container = document.body;
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('div'); snowflake.classList.add('snowflake'); snowflake.innerHTML = '❄️'; // Можно заменить на изображение снежинки 
+                snowflake.style.left = `${Math.random() * 100}vw`; snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Скорость падения снежинки 
+                snowflake.style.animationDelay = `${Math.random() * 10}s`; // Задержка перед падением 
+                snowflake.style.fontSize = `${Math.random() * 10 + 10}px`; // Размер снежинки 
+                snowflake.style.animationName = Math.random() > 0.5 ? 'fall, sway' : 'fall'; // Анимация с покачиванием 
+                container.appendChild(snowflake);
+                container.appendChild(snowflake);
+            }
+        } </script>
+</head>
+
+<body>
+
+    <!-- Анимация загрузки -->
+    <div id="loader">
+        <div class="logo"></div>
+        <div class="loading-text">Загрузка...</div>
+    </div>
+
+    <!-- Контейнер для контента с задержкой загрузки -->
+    <div id="content">
+        <section class="dots-container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </section>
+
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <colgroup> Связь с нами </colgroup>
+                </div>
+                <div class="col">
+                    Наши ресурсы на Ozon, WB
+                </div>
+                <div class="col">
+                    Сотрудничество
+                </div>
+            </div>
+            <!-- warning above take -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Дополнительная
+                информация по ценам</button>
+            <!-- this button -->
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">На данный момент, предусмотрен один
+                        курс!
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Базовые упражнения с консультацией - 5000руб.
+                        Более подробная информация по контактам!
+                    </p>
+                </div>
+                <!--end button, it was after take to button-->
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипт для задержки загрузки -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>
